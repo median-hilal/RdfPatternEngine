@@ -3,20 +3,20 @@ package core;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FormalElement {
+public class PatternElement {
 
-    private  static final List<FormalElement> ELEMENTS_LIST;
+    private  static final List<PatternElement> ELEMENTS_LIST;
     static {
         ELEMENTS_LIST = new ArrayList<>();
-        ELEMENTS_LIST.add(new FormalElement("measure"));
+        ELEMENTS_LIST.add(new PatternElement("measure"));
     }
 
-    public static FormalElement getFormalElementByName(String name){
+    public static PatternElement getElementByName(String name){
         return ELEMENTS_LIST.stream().filter(elem -> elem.getName().equals(name)).findAny().orElse(null);
     }
     String name;
 
-    public FormalElement(String name) {
+    public PatternElement(String name) {
         this.name = name;
     }
 

@@ -6,11 +6,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class ActualElement {
+public class ActualPatternElement {
 
     String name;
 
-    private  static final List<ActualElement> ELEMENTS_LIST;
+    String iri;
+
+    public String getIri() {
+        return iri;
+    }
+
+    public void setIri(String iri) {
+        this.iri = iri;
+    }
+
+    private  static final List<ActualPatternElement> ELEMENTS_LIST;
 
     public String getName() {
         return name;
@@ -22,25 +32,25 @@ public class ActualElement {
 
     static {
         ELEMENTS_LIST = new ArrayList<>();
-        ELEMENTS_LIST.add(new ActualElement());
+        ELEMENTS_LIST.add(new ActualPatternElement());
     }
 
-    public static List<ActualElement> getActualElemenstByName(String name){
+    public static List<ActualPatternElement> getElementList(String name){
         return ELEMENTS_LIST.stream().filter(elem -> elem.getName().equals(name)).collect(Collectors.toList());
     }
 
     Map<String, String> attrs = new HashMap<>();
 
-    public String getAttr(String attrName){
+    public String getAttribute(String attrName){
         return attrs.get(attrName);
     }
 
-    public ActualElement(Map<String, String> attrs) {
+    public ActualPatternElement(Map<String, String> attrs) {
         this.attrs = attrs;
     }
 
 
-    public ActualElement() {
+    public ActualPatternElement() {
 
     }
 }
