@@ -594,10 +594,10 @@ public class SPARQLPatternsGrammarParser extends Parser {
 		public TerminalNode ASCLAUSEEND() { return getToken(SPARQLPatternsGrammarParser.ASCLAUSEEND, 0); }
 		public TerminalNode AS() { return getToken(SPARQLPatternsGrammarParser.AS, 0); }
 		public TerminalNode VARAIBLEMARKER() { return getToken(SPARQLPatternsGrammarParser.VARAIBLEMARKER, 0); }
+		public TerminalNode SPARQLTEXT() { return getToken(SPARQLPatternsGrammarParser.SPARQLTEXT, 0); }
 		public PrefixContext prefix() {
 			return getRuleContext(PrefixContext.class,0);
 		}
-		public TerminalNode SPARQLTEXT() { return getToken(SPARQLPatternsGrammarParser.SPARQLTEXT, 0); }
 		public AsClauseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -642,10 +642,12 @@ public class SPARQLPatternsGrammarParser extends Parser {
 				switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 				case 1:
 					{
+					{
 					setState(71);
 					prefix();
 					setState(72);
 					baseElement();
+					}
 					}
 					break;
 				case 2:

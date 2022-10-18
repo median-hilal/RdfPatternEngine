@@ -23,7 +23,7 @@ joinFilterList: JCSEP baseElement '=' baseElement JCSEP;
 
 //Clause to rename an element
 // MEDIAN do we need sparqlrext here?
-asClause: ASCLAUSEBEGIN baseElement (AS VARAIBLEMARKER (prefix baseElement | SPARQLTEXT))? ASCLAUSEEND;
+asClause: ASCLAUSEBEGIN baseElement (AS (VARAIBLEMARKER)? (prefix baseElement | SPARQLTEXT))? ASCLAUSEEND;
 
 baseElement :  (elementRole | prefixedElementRole);
 
@@ -57,6 +57,6 @@ AS: 'AS';
 
 ID : [a-zA-Z0-9_][a-zA-Z0-9_\-]*;
 
-SPARQLTEXT : '"' .*? '"' ;
+    SPARQLTEXT : '"' .*? '"' ;
 WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
